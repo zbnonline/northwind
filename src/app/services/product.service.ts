@@ -16,13 +16,12 @@ export class ProductService {
   getProducts():Observable<ListResponseModel<Product>>{
     let newPath = this.apiUrl + "products/getall";
     return this.httpClient
-    .get<ListResponseModel<Product>>(newPath) // apiUrl'i productResponseModel'e mapliyoruz
+    .get<ListResponseModel<Product>>(newPath) // apiUrl'i listResponseModel'e mapliyoruz
   }
 
   getProductsByCategory(categoryId:number):Observable<ListResponseModel<Product>>{
     let newPath = this.apiUrl + "products/getbycategory?categoryId="+categoryId;
-    return this.httpClient
-    .get<ListResponseModel<Product>>(newPath) // apiUrl'i productResponseModel'e mapliyoruz
+    return this.httpClient.get<ListResponseModel<Product>>(newPath)
   }
 
 }

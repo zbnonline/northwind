@@ -12,6 +12,7 @@ export class ProductComponent {
 
   products:Product[] = []
   dataLoaded = false;
+  filterText = "";
 
   constructor(private productService:ProductService, private activatedRoute:ActivatedRoute){ }
 
