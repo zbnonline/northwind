@@ -14,20 +14,24 @@
 <table *ngIf="dataLoaded == true" class="table">
   <thead>
     <tr>
-      <td>Id</td>
-      <td>Ürün Adı</td>
-      <td>Kategori</td>
-      <td>Fiyat</td>
-      <td>KDV'li Fiyat</td>
-      <td>Stok Adedi</td>
+      <th>Id</th>
+      <th>Ürün Adı</th>
+      <th>Kategori</th>
+      <th>Fiyat</th>
+      <th>KDV'li Fiyat</th>
+      <th>Stok Adedi</th>
+      <th></th>
     </tr>
   </thead>
-  <tr *ngFor="let product of products | filterPipe:filterText">
-    <td>{{product.productId}}</td>
-    <td>{{product.productName | uppercase}}</td>
-    <td>{{product.categoryId}}</td>
-    <td>{{product.unitPrice | currency}}</td>
-    <td>{{product.unitPrice |vatAdded:18 | currency}}</td>
-    <td>{{product.unitsInStock}}</td>
-  </tr>
+  <tbody>
+    <tr *ngFor="let product of products | filterPipe:filterText">
+      <td>{{product.productId}}</td>
+      <td>{{product.productName | uppercase}}</td>
+      <td>{{product.categoryId}}</td>
+      <td>{{product.unitPrice | currency}}</td>
+      <td>{{product.unitPrice |vatAdded:18 | currency}}</td>
+      <td>{{product.unitsInStock}}</td>
+      <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Sepete Ekle</button></td>
+    </tr>
+  </tbody>
 </table>
