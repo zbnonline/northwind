@@ -34,7 +34,6 @@ export class CategoryComponent {
     }else {
       return "list-group-item";
     }
-
   }
 
   getAllCategoryClass(){
